@@ -14,11 +14,10 @@
 (function () {
   var FONT = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@500;600&display=swap';
 
-  // Barres inclinées façon « bandeau TV » : les cellules sont des
-  // parallélogrammes (clip-path), le texte reste droit.
+  // Barres façon « bandeau TV » : une case par statistique, angles droits.
   var CSS = '\
 .hogly-classement{--hc-red:#b2170d;--hc-bg:#0a0a0a;--hc-bar:#fff;--hc-bar-text:#0a0a0a;--hc-text:#fff;\
---hc-muted:rgba(255,255,255,.55);--hc-us-bar:var(--hc-red);--hc-red-text:#e0463b;--hc-us-text:#fff;--hc-slant:9px;\
+--hc-muted:rgba(255,255,255,.55);--hc-us-bar:var(--hc-red);--hc-red-text:#e0463b;--hc-us-text:#fff;\
 --hc-stat:2.9em;--hc-tab-bg:rgba(255,255,255,.1);--hc-gap:5px;\
 font-family:Barlow,system-ui,sans-serif;color:var(--hc-text);background:var(--hc-bg);\
 padding:22px 20px 18px;max-width:100%;box-sizing:border-box;overflow:hidden;line-height:1.2;\
@@ -30,9 +29,8 @@ border-top:4px solid var(--hc-red)}\
 .hc-kicker{font:700 12px/1 Barlow,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--hc-red-text);margin:0 0 6px}\
 .hc-title{font:900 36px/0.9 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:0}\
 .hc-tabs{display:flex;gap:6px}\
-.hc-tab{appearance:none;border:0;cursor:pointer;background:transparent;color:var(--hc-muted);\
+.hc-tab{appearance:none;border:0;cursor:pointer;color:var(--hc-muted);\
 font:800 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:9px 18px;\
-clip-path:polygon(var(--hc-slant) 0,100% 0,calc(100% - var(--hc-slant)) 100%,0 100%);\
 background:var(--hc-tab-bg);transition:background .15s,color .15s}\
 .hc-tab:hover{color:var(--hc-text)}\
 .hc-tab[aria-selected=true]{background:var(--hc-red);color:#fff}\
@@ -46,10 +44,8 @@ background:var(--hc-tab-bg);transition:background .15s,color .15s}\
 .hc-rank{font:900 28px/1 "Barlow Condensed",sans-serif;color:var(--hc-text);justify-content:flex-start}\
 .hc-row.hc-down .hc-rank{color:var(--hc-red-text)}\
 .hc-cell{background:var(--hc-bar);color:var(--hc-bar-text);min-height:46px;\
-font:800 22px/1 "Barlow Condensed",sans-serif;\
-clip-path:polygon(var(--hc-slant) 0,100% 0,calc(100% - var(--hc-slant)) 100%,0 100%)}\
-.hc-cell.hc-team{justify-content:flex-start;gap:12px;padding:0 22px 0 8px;\
-clip-path:polygon(0 0,100% 0,calc(100% - var(--hc-slant)) 100%,0 100%)}\
+font:800 22px/1 "Barlow Condensed",sans-serif}\
+.hc-cell.hc-team{justify-content:flex-start;gap:12px;padding:0 16px 0 8px}\
 .hc-logo{flex:none;width:36px;height:36px;display:grid;place-items:center}\
 .hc-logo img{max-width:100%;max-height:100%;object-fit:contain}\
 .hc-logo span{width:100%;height:100%;display:grid;place-items:center;background:var(--hc-bar-text);color:var(--hc-bar);\
@@ -72,7 +68,7 @@ text-transform:uppercase;color:var(--hc-muted)}\
 @keyframes hc-in{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}\
 .hc-body .hc-row{animation:hc-in .35s ease both}\
 @media (prefers-reduced-motion:reduce){.hc-body .hc-row{animation:none}.hc-tab{transition:none}}\
-@media (max-width:640px){.hogly-classement{padding:16px 12px 14px;--hc-stat:2.4em;--hc-gap:4px;--hc-slant:7px}\
+@media (max-width:640px){.hogly-classement{padding:16px 12px 14px;--hc-stat:2.4em;--hc-gap:4px}\
 .hc-title{font-size:30px}.hogly-classement .hc-detail{display:none}.hc-legend{display:none}\
 .hc-row{grid-template-columns:1.7em minmax(0,1fr) repeat(var(--hc-n-compact),var(--hc-stat))}\
 .hc-table{min-width:0}.hc-cell{min-height:40px;font-size:19px}.hc-cell.hc-team{gap:8px;padding-right:14px}\
