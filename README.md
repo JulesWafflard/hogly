@@ -42,7 +42,9 @@ Options :
 
 | Attribut | Effet |
 | --- | --- |
-| `data-poule="Poule A"` | n'affiche que la poule du Hogly |
+| `data-poule="Poule A"` | n'affiche qu'une poule (sinon : onglets, ouverts sur la poule du Hogly) |
+| `data-theme="light"` | thème clair (par défaut : sombre) |
+| `data-playoffs="8"` | place de la ligne playoffs / maintien (`0` pour la masquer) |
 | `data-compact="true"` | masque les colonnes détaillées (V, VP, DP, D, BP, BC) |
 | `data-highlight="Roche,Hogly"` | équipes mises en avant |
 | `data-src="…/classement-d2.json"` | utiliser un autre fichier JSON |
@@ -50,7 +52,12 @@ Options :
 Les couleurs se changent en CSS sur le site du club :
 
 ```css
-.hogly-classement { --hc-accent: #c8102e; --hc-highlight: #ffe9a8; }
+.hogly-classement {
+  --hc-bg: #0c0d0f;      /* fond */
+  --hc-panel: #15171a;   /* fond des lignes */
+  --hc-us-bg: #f4f5f6;   /* ligne du Hogly */
+  --hc-ice: #9fd3ff;     /* couleur d'accent */
+}
 ```
 
 ### Nouvelle saison ou changement d'adresse
