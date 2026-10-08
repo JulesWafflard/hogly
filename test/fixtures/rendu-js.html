@@ -1,0 +1,5 @@
+<html><body><h2>Classement D2</h2><div id="app"></div>
+<script>
+const teams=[["Hogly La Roche-sur-Yon",9],["Cholet",6]];
+document.getElementById('app').innerHTML='<table><thead><tr><th>#</th><th>Club</th><th>Pts</th></tr></thead><tbody>'+teams.map((t,i)=>`<tr><td>${i+1}</td><td>${t[0]}</td><td>${t[1]}</td></tr>`).join('')+'</tbody></table>';
+</script></body></html>

@@ -1,0 +1,75 @@
+{
+  "competition": "Division 2 – Saison régulière",
+  "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
+  "miseAJour": "2026-10-08T19:36:52.994Z",
+  "poules": [
+    {
+      "nom": "Poule A",
+      "equipes": [
+        {
+          "rang": 1,
+          "equipe": "La Roche-sur-Yon",
+          "logo": "https://www.hockeyfrance.com/logos/lry.png",
+          "joues": 4,
+          "victoires": 3,
+          "victoiresProlong": 1,
+          "defaitesProlong": 0,
+          "defaites": 0,
+          "butsPour": 18,
+          "butsContre": 7,
+          "difference": 11,
+          "points": 11
+        },
+        {
+          "rang": 2,
+          "equipe": "Brest",
+          "joues": 4,
+          "victoires": 3,
+          "victoiresProlong": 0,
+          "defaitesProlong": 0,
+          "defaites": 1,
+          "butsPour": 15,
+          "butsContre": 9,
+          "difference": 6,
+          "points": 9
+        },
+        {
+          "rang": 3,
+          "equipe": "Rouen II",
+          "joues": 4,
+          "victoires": 0,
+          "victoiresProlong": 0,
+          "defaitesProlong": 1,
+          "defaites": 3,
+          "butsPour": 5,
+          "butsContre": 20,
+          "difference": -15,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "nom": "Poule B",
+      "equipes": [
+        {
+          "rang": 1,
+          "equipe": "Montpellier",
+          "joues": 4,
+          "points": 12,
+          "butsPour": 20,
+          "butsContre": 4,
+          "difference": 16
+        },
+        {
+          "rang": 2,
+          "equipe": "Valence",
+          "joues": 4,
+          "points": 8,
+          "butsPour": 12,
+          "butsContre": 9,
+          "difference": 3
+        }
+      ]
+    }
+  ]
+}

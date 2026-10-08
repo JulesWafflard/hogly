@@ -1,0 +1,6 @@
+{
+  "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
+  "competition": "Division 2 – Saison régulière",
+  "output": "data/classement-d2.json",
+  "highlight": ["Roche", "Hogly"]
+}

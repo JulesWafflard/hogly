@@ -1,0 +1,43 @@
+name: Classement D2
+
+on:
+  schedule:
+    # Toutes les 3 heures, et toutes les 30 minutes les soirs de match
+    # (vendredi, samedi, dimanche entre 18h et minuit, heure de Paris ≈ UTC+1/+2).
+    - cron: "17 */3 * * *"
+    - cron: "*/30 16-23 * * 5,6,0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: classement
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - name: Récupérer le classement
+        run: npm run classement
+      - name: Publier le classement s'il a changé
+        run: |
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Rien à publier."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Mise à jour du classement D2"
+          git push
