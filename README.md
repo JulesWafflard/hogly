@@ -53,10 +53,10 @@ Les couleurs se changent en CSS sur le site du club :
 
 ```css
 .hogly-classement {
-  --hc-bg: #0c0d0f;      /* fond */
-  --hc-panel: #15171a;   /* fond des lignes */
-  --hc-us-bg: #f4f5f6;   /* ligne du Hogly */
-  --hc-ice: #9fd3ff;     /* couleur d'accent */
+  --hc-red: #b2170d;     /* rouge du club : ligne du Hogly, onglets */
+  --hc-bg: #0a0a0a;      /* fond */
+  --hc-bar: #fff;        /* fond des barres */
+  --hc-bar-text: #0a0a0a;/* texte des barres */
 }
 ```
 
