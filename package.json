@@ -1,0 +1,25 @@
+{
+  "name": "hogly",
+  "version": "1.0.0",
+  "description": "Site du Hogly – classement Division 2 mis à jour automatiquement",
+  "scripts": {
+    "classement": "node scripts/update-classement.mjs",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulesWafflard/hogly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JulesWafflard/hogly/issues"
+  },
+  "homepage": "https://github.com/JulesWafflard/hogly#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "playwright": "^1.56.1"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

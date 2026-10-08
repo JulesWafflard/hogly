@@ -1,0 +1,45 @@
+name: Publication GitHub Pages
+
+# Publie le widget et le JSON sur GitHub Pages pour pouvoir les intégrer
+# sur n'importe quel site (WordPress, Wix, site maison…).
+# À activer une fois : Settings > Pages > Source : "GitHub Actions".
+on:
+  push:
+    branches: [main]
+    paths: ["widget/**", "data/**"]
+  workflow_run:
+    workflows: ["Classement D2"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Préparer le site
+        run: |
+          mkdir -p _site
+          cp -r widget _site/widget
+          cp -r data _site/data 2>/dev/null || true
+          cp widget/index.html _site/index.html
+          sed -i 's#src="classement.js"#src="widget/classement.js"#' _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+      - id: deployment
+        uses: actions/deploy-pages@v4
