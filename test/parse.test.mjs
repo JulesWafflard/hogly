@@ -24,3 +24,13 @@ test('gère un en-tête équipe vide et calcule la différence de buts', async (
 test('ne trouve rien tant que le tableau est généré en JavaScript', async () => {
   assert.deepEqual(parseStandings(await fixture('rendu-js.html')), []);
 });
+
+test('reconnait les colonnes du site de la FFHG', async () => {
+  const unknown = [];
+  const [poule] = parseStandings(await fixture('ffhg.html'), { onUnknownColumns: (u) => unknown.push(...u) });
+  assert.deepEqual(poule.equipes[0], {
+    rang: 4, equipe: 'ÉVRY-VIRY', logo: '/logos/evry.png', points: 2, joues: 1, victoires: 0,
+    victoiresProlong: 1, defaitesProlong: 0, defaites: 0, butsPour: 2, butsContre: 1, difference: 1,
+  });
+  assert.deepEqual(unknown, ['Pen', 'Forme']);
+});

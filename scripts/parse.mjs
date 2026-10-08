@@ -11,8 +11,8 @@ const COLUMNS = {
   points: ['pts', 'points', 'pt', 'p.'],
   joues: ['j', 'mj', 'joues', 'matchs', 'm', 'mp', 'gp', 'pj'],
   victoires: ['v', 'g', 'victoires', 'w', 'vtr'],
-  victoiresProlong: ['vp', 'vap', 'vt', 'vtb', 'vprol', 'otw', 'v.p', 'v.ap'],
-  defaitesProlong: ['dp', 'dap', 'dt', 'dtb', 'dprol', 'otl', 'd.p', 'd.ap'],
+  victoiresProlong: ['vp', 'vprl', 'vap', 'vt', 'vtb', 'vprol', 'otw', 'v.p', 'v.ap'],
+  defaitesProlong: ['dp', 'dprl', 'dap', 'dt', 'dtb', 'dprol', 'otl', 'd.p', 'd.ap'],
   defaites: ['d', 'p', 'defaites', 'l'],
   nuls: ['n', 'nuls', 't'],
   butsPour: ['bp', 'bm', 'buts pour', 'gf', 'pour', 'b+'],
@@ -104,8 +104,14 @@ export function parseStandings(html, { onUnknownColumns } = {}) {
       if (cells.length < 2) continue;
       const row = {};
       keys.forEach((key, i) => {
-        if (!key || !cells[i]) return;
+        if (!cells[i]) return;
         const cell = $(cells[i]);
+        if (!key) {
+          // Colonne sans en-tête : sert parfois au logo du club.
+          const src = !normalize(headers[i]) && (cell.find('img').attr('data-src') || cell.find('img').attr('src'));
+          if (src && !src.startsWith('data:') && !row.logo) row.logo = src;
+          return;
+        }
         if (key === 'equipe') {
           row.equipe = cell.text().replace(/\s+/g, ' ').trim();
           const img = cell.find('img').first();
