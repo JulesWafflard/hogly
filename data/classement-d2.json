@@ -1,0 +1,237 @@
+{
+  "competition": "Division 2 – Saison régulière",
+  "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
+  "miseAJour": "2026-10-08T19:46:35.068Z",
+  "poules": [
+    {
+      "nom": "Poule A",
+      "equipes": [
+        {
+          "rang": 1,
+          "equipe": "BREST",
+          "points": 3,
+          "joues": 1,
+          "victoires": 1,
+          "defaites": 0,
+          "butsPour": 7,
+          "butsContre": 4,
+          "difference": 3
+        },
+        {
+          "rang": 2,
+          "equipe": "LUXEMBOURG",
+          "points": 3,
+          "joues": 1,
+          "victoires": 1,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 0,
+          "difference": 2
+        },
+        {
+          "rang": 3,
+          "equipe": "REIMS",
+          "points": 3,
+          "joues": 1,
+          "victoires": 1,
+          "defaites": 0,
+          "butsPour": 6,
+          "butsContre": 4,
+          "difference": 2
+        },
+        {
+          "rang": 4,
+          "equipe": "ÉVRY-VIRY",
+          "points": 2,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 1,
+          "difference": 1
+        },
+        {
+          "rang": 5,
+          "equipe": "FRANCAIS VOLANTS",
+          "points": 1,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 1,
+          "butsContre": 2,
+          "difference": -1
+        },
+        {
+          "rang": 6,
+          "equipe": "ORLÉANS",
+          "points": 0,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 1,
+          "butsPour": 4,
+          "butsContre": 6,
+          "difference": -2
+        },
+        {
+          "rang": 7,
+          "equipe": "HOGLY",
+          "points": 0,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 1,
+          "butsPour": 0,
+          "butsContre": 2,
+          "difference": -2
+        },
+        {
+          "rang": 8,
+          "equipe": "COURBEVOIE",
+          "points": 0,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 1,
+          "butsPour": 4,
+          "butsContre": 7,
+          "difference": -3
+        },
+        {
+          "rang": 9,
+          "equipe": "CHÂLONS-EN-CHAMPAGNE",
+          "points": 0,
+          "joues": 0,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 1,
+          "butsContre": 2,
+          "difference": -1
+        },
+        {
+          "rang": 10,
+          "equipe": "WASQUEHAL",
+          "points": 0,
+          "joues": 0,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 1,
+          "difference": 1
+        }
+      ]
+    },
+    {
+      "nom": "Poule B",
+      "equipes": [
+        {
+          "rang": 1,
+          "equipe": "TOULOUSE BLAGNAC",
+          "points": 3,
+          "joues": 1,
+          "victoires": 1,
+          "defaites": 0,
+          "butsPour": 7,
+          "butsContre": 0,
+          "difference": 7
+        },
+        {
+          "rang": 2,
+          "equipe": "MULHOUSE",
+          "points": 3,
+          "joues": 1,
+          "victoires": 1,
+          "defaites": 0,
+          "butsPour": 4,
+          "butsContre": 3,
+          "difference": 1
+        },
+        {
+          "rang": 3,
+          "equipe": "CLERMONT-FERRAND",
+          "points": 2,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 8,
+          "butsContre": 2,
+          "difference": 6
+        },
+        {
+          "rang": 4,
+          "equipe": "ANNECY",
+          "points": 2,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 3,
+          "butsContre": 2,
+          "difference": 1
+        },
+        {
+          "rang": 5,
+          "equipe": "HCMP",
+          "points": 2,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 3,
+          "butsContre": 2,
+          "difference": 1
+        },
+        {
+          "rang": 6,
+          "equipe": "MONTPELLIER",
+          "points": 1,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 3,
+          "difference": -1
+        },
+        {
+          "rang": 7,
+          "equipe": "VAUJANY-GRENOBLE",
+          "points": 1,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 3,
+          "difference": -1
+        },
+        {
+          "rang": 8,
+          "equipe": "TOULON",
+          "points": 1,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 0,
+          "butsPour": 2,
+          "butsContre": 8,
+          "difference": -6
+        },
+        {
+          "rang": 9,
+          "equipe": "ROANNE",
+          "points": 0,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 1,
+          "butsPour": 3,
+          "butsContre": 4,
+          "difference": -1
+        },
+        {
+          "rang": 10,
+          "equipe": "DIJON",
+          "points": 0,
+          "joues": 1,
+          "victoires": 0,
+          "defaites": 1,
+          "butsPour": 0,
+          "butsContre": 7,
+          "difference": -7
+        }
+      ]
+    }
+  ]
+}
