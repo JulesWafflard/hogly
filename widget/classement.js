@@ -43,18 +43,15 @@ background:var(--hc-tab-bg);transition:background .15s,color .15s}\
 .hc-th.hc-th-rank{justify-content:flex-start}\
 .hc-th.hc-team{justify-content:flex-start;padding-left:4px;font-size:15px;letter-spacing:.06em;color:var(--hc-muted)}\
 .hc-table>.hc-row:first-child{position:relative;z-index:3}\
-.hc-tip{position:relative;cursor:help;outline:none}\
-.hc-tip:after{content:attr(data-tip);position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,-4px);\
-width:max-content;max-width:15em;padding:7px 10px;background:var(--hc-red);color:#fff;\
-font:600 12px/1.3 Barlow,sans-serif;letter-spacing:0;text-transform:none;text-align:center;white-space:normal;\
-box-shadow:0 4px 14px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s}\
-.hc-tip:before{content:"";position:absolute;top:calc(100% + 2px);left:50%;margin-left:-6px;border:6px solid transparent;\
-border-top:0;border-bottom-color:var(--hc-red);opacity:0;visibility:hidden;transition:opacity .15s}\
-.hc-tip:hover:after,.hc-tip:focus:after{opacity:1;visibility:visible;transform:translate(-50%,0)}\
-.hc-tip:hover:before,.hc-tip:focus:before{opacity:1;visibility:visible}\
+.hc-tip{cursor:help;outline:none}\
 .hc-tip:focus-visible{text-decoration:underline;text-decoration-color:var(--hc-red);text-underline-offset:4px}\
-.hc-tip:last-child:after{left:auto;right:0;transform:translateY(-4px)}\
-.hc-tip:last-child:hover:after,.hc-tip:last-child:focus:after{transform:none}\
+.hc-bubble{position:fixed;z-index:2147483000;max-width:15em;padding:7px 10px;background:#b2170d;color:#fff;\
+font:600 12px/1.3 Barlow,system-ui,sans-serif;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.35);\
+pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}\
+.hc-bubble.hc-on{opacity:1;transform:none}\
+.hc-bubble:after{content:"";position:absolute;top:100%;left:var(--hc-arrow,50%);margin-left:-6px;\
+border:6px solid transparent;border-bottom:0;border-top-color:#b2170d}\
+@media (prefers-reduced-motion:reduce){.hc-bubble{transition:none}}\
 .hc-rank{font:900 28px/1 "Barlow Condensed",sans-serif;color:var(--hc-text);justify-content:flex-start}\
 .hc-row.hc-down .hc-rank{color:var(--hc-red-text)}\
 .hc-cell{background:var(--hc-bar);color:var(--hc-bar-text);min-height:46px;\
@@ -294,6 +291,38 @@ text-transform:uppercase;color:var(--hc-muted)}\
     document.head.appendChild(link);
   }
   document.head.appendChild(el('style', null, CSS));
+
+  // Bulle d'aide des en-têtes, affichée au-dessus. Elle est placée dans
+  // <body> en position fixe pour ne pas être coupée par la zone de défilement.
+  var bubble = null, owner = null;
+  function showTip(target) {
+    if (!bubble) {
+      bubble = el('div', 'hc-bubble');
+      bubble.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bubble);
+    }
+    owner = target;
+    bubble.textContent = target.getAttribute('data-tip');
+    bubble.classList.add('hc-on');
+    var r = target.getBoundingClientRect();
+    var w = bubble.offsetWidth, h = bubble.offsetHeight, margin = 8;
+    var center = r.left + r.width / 2;
+    var left = Math.max(margin, Math.min(center - w / 2, window.innerWidth - w - margin));
+    bubble.style.left = left + 'px';
+    bubble.style.top = (r.top - h - 10) + 'px';
+    bubble.style.setProperty('--hc-arrow', (center - left) + 'px');
+  }
+  function hideTip(target) {
+    if (bubble && (!target || target === owner)) { bubble.classList.remove('hc-on'); owner = null; }
+  }
+  function tipOf(e) { return e.target.closest && e.target.closest('.hogly-classement .hc-tip'); }
+  document.addEventListener('mouseover', function (e) { var t = tipOf(e); if (t) showTip(t); });
+  document.addEventListener('mouseout', function (e) { var t = tipOf(e); if (t) hideTip(t); });
+  document.addEventListener('focusin', function (e) { var t = tipOf(e); if (t) showTip(t); });
+  document.addEventListener('focusout', function (e) { var t = tipOf(e); if (t) hideTip(t); });
+  window.addEventListener('scroll', function () { hideTip(); }, true);
+  window.addEventListener('resize', function () { hideTip(); });
+
   function start() {
     var roots = document.querySelectorAll('.hogly-classement');
     for (var i = 0; i < roots.length; i++) init(roots[i]);
