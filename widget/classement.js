@@ -40,7 +40,21 @@ background:var(--hc-tab-bg);transition:background .15s,color .15s}\
 .hc-row{display:grid;grid-template-columns:2.1em minmax(12em,1fr) repeat(var(--hc-n),var(--hc-stat));gap:var(--hc-gap);align-items:stretch}\
 .hc-row>*{display:flex;align-items:center;justify-content:center}\
 .hc-th{text-decoration:none;cursor:default;font:800 17px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--hc-text);padding:0 0 2px}\
+.hc-th.hc-th-rank{justify-content:flex-start}\
 .hc-th.hc-team{justify-content:flex-start;padding-left:4px;font-size:15px;letter-spacing:.06em;color:var(--hc-muted)}\
+.hc-table>.hc-row:first-child{position:relative;z-index:3}\
+.hc-tip{position:relative;cursor:help;outline:none}\
+.hc-tip:after{content:attr(data-tip);position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,-4px);\
+width:max-content;max-width:15em;padding:7px 10px;background:var(--hc-red);color:#fff;\
+font:600 12px/1.3 Barlow,sans-serif;letter-spacing:0;text-transform:none;text-align:center;white-space:normal;\
+box-shadow:0 4px 14px rgba(0,0,0,.35);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s}\
+.hc-tip:before{content:"";position:absolute;top:calc(100% + 2px);left:50%;margin-left:-6px;border:6px solid transparent;\
+border-top:0;border-bottom-color:var(--hc-red);opacity:0;visibility:hidden;transition:opacity .15s}\
+.hc-tip:hover:after,.hc-tip:focus:after{opacity:1;visibility:visible;transform:translate(-50%,0)}\
+.hc-tip:hover:before,.hc-tip:focus:before{opacity:1;visibility:visible}\
+.hc-tip:focus-visible{text-decoration:underline;text-decoration-color:var(--hc-red);text-underline-offset:4px}\
+.hc-tip:last-child:after{left:auto;right:0;transform:translateY(-4px)}\
+.hc-tip:last-child:hover:after,.hc-tip:last-child:focus:after{transform:none}\
 .hc-rank{font:900 28px/1 "Barlow Condensed",sans-serif;color:var(--hc-text);justify-content:flex-start}\
 .hc-row.hc-down .hc-rank{color:var(--hc-red-text)}\
 .hc-cell{background:var(--hc-bar);color:var(--hc-bar-text);min-height:46px;\
@@ -55,7 +69,6 @@ text-overflow:ellipsis;max-width:14em}\
 .hc-row.hc-us .hc-cell{background:var(--hc-us-bar);color:var(--hc-us-text)}\
 .hc-row.hc-us .hc-rank{color:var(--hc-red)}\
 .hogly-classement:not([data-theme=light]) .hc-row.hc-us .hc-rank{color:#fff}\
-.hc-row.hc-us .hc-logo{background:#fff;padding:3px}\
 .hc-pts{font-weight:900}\
 .hc-cut{display:flex;align-items:center;gap:10px;margin:4px 0;font:700 11px/1 Barlow,sans-serif;letter-spacing:.18em;\
 text-transform:uppercase;color:var(--hc-muted)}\
@@ -76,18 +89,18 @@ text-transform:uppercase;color:var(--hc-muted)}\
 .hogly-classement[data-compact=true] .hc-detail{display:none}\
 .hogly-classement[data-compact=true] .hc-row{grid-template-columns:2.1em minmax(12em,1fr) repeat(var(--hc-n-compact),var(--hc-stat))}';
 
-  // [clé, en-tête, détaillée ?, légende]
+  // [clé, en-tête, détaillée ?, légende, nom complet (bulle)]
   var COLS = [
-    ['points', 'Pts', false, 'points'],
-    ['joues', 'J', false, 'joués'],
-    ['victoires', 'V', true, 'victoires'],
-    ['victoiresProlong', 'VP', true, 'vict. prolong.'],
-    ['defaitesProlong', 'DP', true, 'déf. prolong.'],
-    ['defaites', 'D', true, 'défaites'],
-    ['nuls', 'N', true, 'nuls'],
-    ['butsPour', 'BP', true, 'buts pour'],
-    ['butsContre', 'BC', true, 'buts contre'],
-    ['difference', '+/-', false, 'différence']
+    ['points', 'Pts', false, 'points', 'Points'],
+    ['joues', 'J', false, 'joués', 'Matchs joués'],
+    ['victoires', 'V', true, 'victoires', 'Victoires'],
+    ['victoiresProlong', 'VP', true, 'vict. prolong.', 'Victoires en prolongation ou aux tirs au but'],
+    ['defaitesProlong', 'DP', true, 'déf. prolong.', 'Défaites en prolongation ou aux tirs au but'],
+    ['defaites', 'D', true, 'défaites', 'Défaites'],
+    ['nuls', 'N', true, 'nuls', 'Matchs nuls'],
+    ['butsPour', 'BP', true, 'buts pour', 'Buts marqués'],
+    ['butsContre', 'BC', true, 'buts contre', 'Buts encaissés'],
+    ['difference', '+/-', false, 'différence', 'Différence de buts']
   ];
 
   function el(tag, cls, text) {
@@ -139,11 +152,13 @@ text-transform:uppercase;color:var(--hc-muted)}\
 
     var head = el('div', 'hc-row');
     head.setAttribute('role', 'row');
-    head.appendChild(cell('span', 'hc-th', '#', 'columnheader'));
+    head.appendChild(cell('span', 'hc-th hc-th-rank', '#', 'columnheader'));
     head.appendChild(cell('span', 'hc-th hc-team', poule.nom, 'columnheader'));
     cols.forEach(function (c) {
-      var th = cell('abbr', 'hc-th' + (c[2] ? ' hc-detail' : ''), c[1], 'columnheader');
-      th.title = c[3];
+      var th = cell('span', 'hc-th hc-tip' + (c[2] ? ' hc-detail' : ''), c[1], 'columnheader');
+      th.setAttribute('data-tip', c[4]);
+      th.setAttribute('aria-label', c[4]);
+      th.tabIndex = 0; // bulle aussi au clavier et au toucher
       head.appendChild(th);
     });
     table.appendChild(head);
