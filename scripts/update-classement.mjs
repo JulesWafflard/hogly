@@ -52,7 +52,10 @@ async function load() {
 }
 
 const { html, how } = await load();
-const poules = absolutizeLogos(parseStandings(html), source);
+const poules = absolutizeLogos(parseStandings(html, {
+  onUnknownColumns: (unknown, all) =>
+    console.warn(`Colonnes ignorées : ${unknown.join(' | ')} (en-têtes : ${all.join(' | ')})`),
+}), source);
 if (!poules.length) {
   console.error(`Aucun classement trouvé sur ${source}. L'ancien fichier est conservé.`);
   process.exit(1);

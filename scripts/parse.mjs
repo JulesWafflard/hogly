@@ -72,7 +72,7 @@ function headerCells($, table) {
   return first.find('th,td').toArray();
 }
 
-export function parseStandings(html) {
+export function parseStandings(html, { onUnknownColumns } = {}) {
   const $ = cheerio.load(html);
   const tables = [];
 
@@ -91,6 +91,8 @@ export function parseStandings(html) {
       if (blank !== -1) { keys[blank] = 'equipe'; taken.add('equipe'); }
     }
     if (!taken.has('equipe') || !taken.has('points')) return;
+    const unknown = headers.filter((h, i) => !keys[i] && normalize(h)).map((h) => h.trim());
+    if (unknown.length && onUnknownColumns) onUnknownColumns(unknown, headers.map((h) => h.trim()));
 
     const bodyRows = $(table).find('tbody tr').length
       ? $(table).find('tbody tr').toArray()
