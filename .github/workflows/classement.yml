@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: classement
@@ -29,7 +30,27 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm test
       - name: Récupérer le classement
-        run: npm run classement
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          npm run classement
+          code=$?
+          set -e
+          # 75 = site de la FFHG momentanément indisponible (403, 503, réseau…).
+          # On ne fait échouer le workflow (et envoyer un e-mail) que si le
+          # dernier succès date de plus de 24 h.
+          if [ "$code" -eq 75 ]; then
+            last=$(gh run list --workflow classement.yml --status success --limit 1 \
+              --json createdAt --jq '.[0].createdAt // empty')
+            age=$(( $(date +%s) - $(date -d "${last:-1970-01-01}" +%s) ))
+            if [ "$age" -lt 86400 ]; then
+              echo "::warning::Site de la FFHG momentanément indisponible, nouvel essai à la prochaine exécution."
+              exit 0
+            fi
+            echo "::error::Le site de la FFHG refuse l'accès depuis plus de 24 h."
+          fi
+          exit "$code"
       - name: Publier le classement s'il a changé
         run: |
           git add data/
