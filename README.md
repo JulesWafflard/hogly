@@ -67,6 +67,11 @@ Si la FFHG change l'adresse de la page de classement, il suffit de modifier
 tableau non reconnu), le workflow échoue et GitHub envoie un e-mail. L'ancien
 classement reste affiché.
 
+Si le site de la FFHG est seulement indisponible un moment (accès refusé,
+maintenance, surcharge), le robot réessaie, puis passe par un navigateur. S'il
+échoue encore, il attend l'exécution suivante sans envoyer d'e-mail. Il ne
+signale une erreur que si le site reste inaccessible plus de 24 heures.
+
 GitHub met en pause les tâches planifiées d'un dépôt sans activité pendant
 60 jours. Si le classement ne bouge plus pendant l'intersaison, il faut
 réactiver le workflow à la reprise (onglet Actions).
