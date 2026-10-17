@@ -1,7 +1,7 @@
 {
   "competition": "Division 2 – Saison régulière",
   "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
-  "miseAJour": "2026-10-17T20:50:58.726Z",
+  "miseAJour": "2026-10-17T22:56:20.316Z",
   "poules": [
     {
       "nom": "Poule A",
@@ -181,20 +181,34 @@
         },
         {
           "rang": 3,
-          "equipe": "HCMP",
-          "logo": "https://hockeynet.fr/storage/logos_structures/x2uWL8QwTyHGwQEG37JjNstzAhDsQJ8aFOIKpM4H.png",
-          "points": 5,
+          "equipe": "CLERMONT-FERRAND",
+          "logo": "https://hockeynet.fr/storage/logos_structures/Fd04LzSShvtzmlpLFJZwoWiPywSAJ1OPe6zYEEip.png",
+          "points": 6,
           "joues": 2,
-          "victoires": 1,
-          "victoiresProlong": 1,
+          "victoires": 2,
+          "victoiresProlong": 0,
           "defaitesProlong": 0,
           "defaites": 0,
-          "butsPour": 10,
-          "butsContre": 6,
-          "difference": 4
+          "butsPour": 13,
+          "butsContre": 4,
+          "difference": 9
         },
         {
           "rang": 4,
+          "equipe": "TOULOUSE BLAGNAC",
+          "logo": "https://hockeynet.fr/storage/logos_structures/9SxLfkuleeaftCMd1E0lBbhIl9rnnv5jvDm5F9u3.png",
+          "points": 5,
+          "joues": 3,
+          "victoires": 1,
+          "victoiresProlong": 1,
+          "defaitesProlong": 0,
+          "defaites": 1,
+          "butsPour": 14,
+          "butsContre": 10,
+          "difference": 4
+        },
+        {
+          "rang": 5,
           "equipe": "ANNECY",
           "logo": "https://hockeynet.fr/storage/logos_structures/9wG9pObyfOr7IhWS2GXBZODJBmqD0z8KJVwX9O5j.png",
           "points": 5,
@@ -208,49 +222,21 @@
           "difference": 1
         },
         {
-          "rang": 5,
-          "equipe": "CLERMONT-FERRAND",
-          "logo": "https://hockeynet.fr/storage/logos_structures/Fd04LzSShvtzmlpLFJZwoWiPywSAJ1OPe6zYEEip.png",
-          "points": 3,
-          "joues": 1,
-          "victoires": 1,
-          "victoiresProlong": 0,
-          "defaitesProlong": 0,
-          "defaites": 0,
-          "butsPour": 8,
-          "butsContre": 2,
-          "difference": 6
-        },
-        {
           "rang": 6,
-          "equipe": "TOULOUSE BLAGNAC",
-          "logo": "https://hockeynet.fr/storage/logos_structures/9SxLfkuleeaftCMd1E0lBbhIl9rnnv5jvDm5F9u3.png",
-          "points": 3,
-          "joues": 2,
+          "equipe": "HCMP",
+          "logo": "https://hockeynet.fr/storage/logos_structures/x2uWL8QwTyHGwQEG37JjNstzAhDsQJ8aFOIKpM4H.png",
+          "points": 5,
+          "joues": 3,
           "victoires": 1,
-          "victoiresProlong": 0,
+          "victoiresProlong": 1,
           "defaitesProlong": 0,
           "defaites": 1,
-          "butsPour": 8,
-          "butsContre": 5,
-          "difference": 3
+          "butsPour": 12,
+          "butsContre": 11,
+          "difference": 1
         },
         {
           "rang": 7,
-          "equipe": "ROANNE",
-          "logo": "https://hockeynet.fr/storage/logos_structures/G62i2P7gySJkNjxyBrA2mzzxj7NZLlCb8sD4750i.png",
-          "points": 3,
-          "joues": 2,
-          "victoires": 1,
-          "victoiresProlong": 0,
-          "defaitesProlong": 0,
-          "defaites": 1,
-          "butsPour": 6,
-          "butsContre": 6,
-          "difference": 0
-        },
-        {
-          "rang": 8,
           "equipe": "MULHOUSE",
           "logo": "https://hockeynet.fr/storage/logos_equipes/189/DgGy9tA2NCtN2lgM5uJnVB4f01UR5P51ra9OggYZ.jpg",
           "points": 3,
@@ -264,18 +250,32 @@
           "difference": -3
         },
         {
+          "rang": 8,
+          "equipe": "ROANNE",
+          "logo": "https://hockeynet.fr/storage/logos_structures/G62i2P7gySJkNjxyBrA2mzzxj7NZLlCb8sD4750i.png",
+          "points": 3,
+          "joues": 2,
+          "victoires": 1,
+          "victoiresProlong": 0,
+          "defaitesProlong": 0,
+          "defaites": 1,
+          "butsPour": 6,
+          "butsContre": 6,
+          "difference": 0
+        },
+        {
           "rang": 9,
           "equipe": "TOULON",
           "logo": "https://hockeynet.fr/storage/logos_equipes/254/6KNAse5chYLqLy6ECT0Q34oviKdsOqDdPzMgHNU3.jpg",
-          "points": 0,
-          "joues": 2,
+          "points": 1,
+          "joues": 3,
           "victoires": 0,
           "victoiresProlong": 0,
-          "defaitesProlong": 0,
+          "defaitesProlong": 1,
           "defaites": 2,
-          "butsPour": 8,
-          "butsContre": 15,
-          "difference": -7
+          "butsPour": 13,
+          "butsContre": 21,
+          "difference": -8
         },
         {
           "rang": 10,
