@@ -1,7 +1,7 @@
 {
   "competition": "Division 2 – Saison régulière",
   "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
-  "miseAJour": "2026-10-17T20:34:19.710Z",
+  "miseAJour": "2026-10-17T20:50:58.726Z",
   "poules": [
     {
       "nom": "Poule A",
@@ -22,6 +22,20 @@
         },
         {
           "rang": 2,
+          "equipe": "FRANCAIS VOLANTS",
+          "logo": "https://hockeynet.fr/storage/logos_equipes/421/G4XQG8O9yN8iafPVp37XiyWmd1q8wqhYvljd4hRb.png",
+          "points": 7,
+          "joues": 3,
+          "victoires": 2,
+          "victoiresProlong": 0,
+          "defaitesProlong": 1,
+          "defaites": 0,
+          "butsPour": 8,
+          "butsContre": 6,
+          "difference": 2
+        },
+        {
+          "rang": 3,
           "equipe": "BREST",
           "logo": "https://hockeynet.fr/storage/logos_structures/htxPtc6ttXYmBIscg6ykNsfbXWdeiuVLgNTQ3IkB.png",
           "points": 6,
@@ -35,7 +49,7 @@
           "difference": 5
         },
         {
-          "rang": 3,
+          "rang": 4,
           "equipe": "ÉVRY-VIRY",
           "logo": "https://hockeynet.fr/storage/logos_structures/otGtUVsCAW6Yk5TZj01l2ifZ5mrKvIswRWx2UNTV.png",
           "points": 6,
@@ -49,7 +63,7 @@
           "difference": 4
         },
         {
-          "rang": 4,
+          "rang": 5,
           "equipe": "HOGLY",
           "logo": "https://hockeynet.fr/storage/logos_structures/470Q7VLLHMYRmOkSvslXDevM4Uam9P7RnLzYDHcf.png",
           "points": 6,
@@ -63,7 +77,7 @@
           "difference": 3
         },
         {
-          "rang": 5,
+          "rang": 6,
           "equipe": "CHÂLONS-EN-CHAMPAGNE",
           "logo": "https://hockeynet.fr/storage/logos_structures/nsPtzdJhzCosiui4I9QN3UrxXkF3GKxdVKJxjo9u.png",
           "points": 4,
@@ -75,20 +89,6 @@
           "butsPour": 5,
           "butsContre": 5,
           "difference": 0
-        },
-        {
-          "rang": 6,
-          "equipe": "FRANCAIS VOLANTS",
-          "logo": "https://hockeynet.fr/storage/logos_equipes/421/G4XQG8O9yN8iafPVp37XiyWmd1q8wqhYvljd4hRb.png",
-          "points": 4,
-          "joues": 2,
-          "victoires": 1,
-          "victoiresProlong": 0,
-          "defaitesProlong": 1,
-          "defaites": 0,
-          "butsPour": 6,
-          "butsContre": 5,
-          "difference": 1
         },
         {
           "rang": 7,
@@ -123,14 +123,14 @@
           "equipe": "COURBEVOIE",
           "logo": "https://hockeynet.fr/storage/logos_structures/rpBHXM8tEcymVXcIyYtu3Droz1r4NpPHMGBQ5OIP.png",
           "points": 0,
-          "joues": 2,
+          "joues": 3,
           "victoires": 0,
           "victoiresProlong": 0,
           "defaitesProlong": 0,
-          "defaites": 2,
-          "butsPour": 9,
-          "butsContre": 14,
-          "difference": -5
+          "defaites": 3,
+          "butsPour": 10,
+          "butsContre": 16,
+          "difference": -6
         },
         {
           "rang": 10,
@@ -153,6 +153,20 @@
       "equipes": [
         {
           "rang": 1,
+          "equipe": "MONTPELLIER",
+          "logo": "https://hockeynet.fr/storage/logos_structures/9fTTfEzmpYFv55kveC8kEe2jcQgww0EanwzFrqja.png",
+          "points": 7,
+          "joues": 3,
+          "victoires": 2,
+          "victoiresProlong": 0,
+          "defaitesProlong": 1,
+          "defaites": 0,
+          "butsPour": 11,
+          "butsContre": 6,
+          "difference": 5
+        },
+        {
+          "rang": 2,
           "equipe": "VAUJANY-GRENOBLE",
           "logo": "https://hockeynet.fr/storage/logos_equipes/380/LbAoXOy7cjCezb6jzjr6VyBsgtMnKomiZz9iD23P.png",
           "points": 7,
@@ -166,7 +180,7 @@
           "difference": 2
         },
         {
-          "rang": 2,
+          "rang": 3,
           "equipe": "HCMP",
           "logo": "https://hockeynet.fr/storage/logos_structures/x2uWL8QwTyHGwQEG37JjNstzAhDsQJ8aFOIKpM4H.png",
           "points": 5,
@@ -180,32 +194,18 @@
           "difference": 4
         },
         {
-          "rang": 3,
+          "rang": 4,
           "equipe": "ANNECY",
           "logo": "https://hockeynet.fr/storage/logos_structures/9wG9pObyfOr7IhWS2GXBZODJBmqD0z8KJVwX9O5j.png",
           "points": 5,
-          "joues": 2,
+          "joues": 3,
           "victoires": 1,
           "victoiresProlong": 1,
           "defaitesProlong": 0,
-          "defaites": 0,
-          "butsPour": 10,
-          "butsContre": 8,
-          "difference": 2
-        },
-        {
-          "rang": 4,
-          "equipe": "MONTPELLIER",
-          "logo": "https://hockeynet.fr/storage/logos_structures/9fTTfEzmpYFv55kveC8kEe2jcQgww0EanwzFrqja.png",
-          "points": 4,
-          "joues": 2,
-          "victoires": 1,
-          "victoiresProlong": 0,
-          "defaitesProlong": 1,
-          "defaites": 0,
-          "butsPour": 7,
-          "butsContre": 4,
-          "difference": 3
+          "defaites": 1,
+          "butsPour": 12,
+          "butsContre": 11,
+          "difference": 1
         },
         {
           "rang": 5,
@@ -237,6 +237,20 @@
         },
         {
           "rang": 7,
+          "equipe": "ROANNE",
+          "logo": "https://hockeynet.fr/storage/logos_structures/G62i2P7gySJkNjxyBrA2mzzxj7NZLlCb8sD4750i.png",
+          "points": 3,
+          "joues": 2,
+          "victoires": 1,
+          "victoiresProlong": 0,
+          "defaitesProlong": 0,
+          "defaites": 1,
+          "butsPour": 6,
+          "butsContre": 6,
+          "difference": 0
+        },
+        {
+          "rang": 8,
           "equipe": "MULHOUSE",
           "logo": "https://hockeynet.fr/storage/logos_equipes/189/DgGy9tA2NCtN2lgM5uJnVB4f01UR5P51ra9OggYZ.jpg",
           "points": 3,
@@ -248,20 +262,6 @@
           "butsPour": 11,
           "butsContre": 14,
           "difference": -3
-        },
-        {
-          "rang": 8,
-          "equipe": "ROANNE",
-          "logo": "https://hockeynet.fr/storage/logos_structures/G62i2P7gySJkNjxyBrA2mzzxj7NZLlCb8sD4750i.png",
-          "points": 0,
-          "joues": 1,
-          "victoires": 0,
-          "victoiresProlong": 0,
-          "defaitesProlong": 0,
-          "defaites": 1,
-          "butsPour": 3,
-          "butsContre": 4,
-          "difference": -1
         },
         {
           "rang": 9,
@@ -282,14 +282,14 @@
           "equipe": "DIJON",
           "logo": "https://hockeynet.fr/storage/logos_structures/0waO1iXRUC13jp535uH3QBW8E5kvSptTmMw7Rmq1.png",
           "points": 0,
-          "joues": 2,
+          "joues": 3,
           "victoires": 0,
           "victoiresProlong": 0,
           "defaitesProlong": 0,
-          "defaites": 2,
-          "butsPour": 3,
-          "butsContre": 12,
-          "difference": -9
+          "defaites": 3,
+          "butsPour": 5,
+          "butsContre": 16,
+          "difference": -11
         }
       ]
     }
