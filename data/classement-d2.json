@@ -1,7 +1,7 @@
 {
   "competition": "Division 2 – Saison régulière",
   "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
-  "miseAJour": "2026-10-24T20:45:45.193Z",
+  "miseAJour": "2026-10-24T21:26:42.774Z",
   "poules": [
     {
       "nom": "Poule A",
@@ -153,6 +153,20 @@
       "equipes": [
         {
           "rang": 1,
+          "equipe": "MONTPELLIER",
+          "logo": "https://hockeynet.fr/storage/logos_structures/9fTTfEzmpYFv55kveC8kEe2jcQgww0EanwzFrqja.png",
+          "points": 10,
+          "joues": 4,
+          "victoires": 3,
+          "victoiresProlong": 0,
+          "defaitesProlong": 1,
+          "defaites": 0,
+          "butsPour": 13,
+          "butsContre": 7,
+          "difference": 6
+        },
+        {
+          "rang": 2,
           "equipe": "CLERMONT-FERRAND",
           "logo": "https://hockeynet.fr/storage/logos_structures/Fd04LzSShvtzmlpLFJZwoWiPywSAJ1OPe6zYEEip.png",
           "points": 9,
@@ -166,32 +180,18 @@
           "difference": 14
         },
         {
-          "rang": 2,
-          "equipe": "MONTPELLIER",
-          "logo": "https://hockeynet.fr/storage/logos_structures/9fTTfEzmpYFv55kveC8kEe2jcQgww0EanwzFrqja.png",
-          "points": 7,
-          "joues": 3,
-          "victoires": 2,
-          "victoiresProlong": 0,
-          "defaitesProlong": 1,
-          "defaites": 0,
-          "butsPour": 11,
-          "butsContre": 6,
-          "difference": 5
-        },
-        {
           "rang": 3,
           "equipe": "VAUJANY-GRENOBLE",
           "logo": "https://hockeynet.fr/storage/logos_equipes/380/LbAoXOy7cjCezb6jzjr6VyBsgtMnKomiZz9iD23P.png",
           "points": 7,
-          "joues": 3,
+          "joues": 4,
           "victoires": 2,
           "victoiresProlong": 0,
           "defaitesProlong": 1,
-          "defaites": 0,
-          "butsPour": 11,
-          "butsContre": 9,
-          "difference": 2
+          "defaites": 1,
+          "butsPour": 12,
+          "butsContre": 11,
+          "difference": 1
         },
         {
           "rang": 4,
