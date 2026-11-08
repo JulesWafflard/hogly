@@ -18,7 +18,9 @@ concurrency:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    # Version figée : « ubuntu-latest » change sans prévenir et a déjà cassé
+    # l'installation du navigateur de secours (Playwright).
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +29,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      # Le navigateur ne sert qu'en secours : son installation ne doit jamais
+      # empêcher la récupération normale du classement.
+      - name: Installer le navigateur de secours
+        run: npx playwright install --with-deps chromium
+        continue-on-error: true
       - run: npm test
       - name: Récupérer le classement
         env:
