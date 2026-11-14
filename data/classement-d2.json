@@ -1,7 +1,7 @@
 {
   "competition": "Division 2 – Saison régulière",
   "source": "https://www.hockeyfrance.com/competitions/championnats-seniors/d2/saison-reguliere/classements-2/",
-  "miseAJour": "2026-11-08T14:30:51.600Z",
+  "miseAJour": "2026-11-14T19:55:21.636Z",
   "poules": [
     {
       "nom": "Poule A",
@@ -39,17 +39,31 @@
           "equipe": "ÉVRY-VIRY",
           "logo": "https://hockeynet.fr/storage/logos_structures/otGtUVsCAW6Yk5TZj01l2ifZ5mrKvIswRWx2UNTV.png",
           "points": 12,
-          "joues": 5,
+          "joues": 6,
           "victoires": 3,
           "victoiresProlong": 1,
           "defaitesProlong": 1,
-          "defaites": 0,
-          "butsPour": 31,
-          "butsContre": 13,
-          "difference": 18
+          "defaites": 1,
+          "butsPour": 32,
+          "butsContre": 17,
+          "difference": 15
         },
         {
           "rang": 4,
+          "equipe": "CHÂLONS-EN-CHAMPAGNE",
+          "logo": "https://hockeynet.fr/storage/logos_structures/nsPtzdJhzCosiui4I9QN3UrxXkF3GKxdVKJxjo9u.png",
+          "points": 11,
+          "joues": 6,
+          "victoires": 3,
+          "victoiresProlong": 0,
+          "defaitesProlong": 2,
+          "defaites": 1,
+          "butsPour": 21,
+          "butsContre": 18,
+          "difference": 3
+        },
+        {
+          "rang": 5,
           "equipe": "BREST",
           "logo": "https://hockeynet.fr/storage/logos_structures/htxPtc6ttXYmBIscg6ykNsfbXWdeiuVLgNTQ3IkB.png",
           "points": 10,
@@ -63,7 +77,7 @@
           "difference": 8
         },
         {
-          "rang": 5,
+          "rang": 6,
           "equipe": "REIMS",
           "logo": "https://hockeynet.fr/storage/logos_structures/GeMID3yvJ5IWdBkFs9fAD2HO6im39Wj4lz1ZSleY.png",
           "points": 10,
@@ -75,20 +89,6 @@
           "butsPour": 19,
           "butsContre": 20,
           "difference": -1
-        },
-        {
-          "rang": 6,
-          "equipe": "CHÂLONS-EN-CHAMPAGNE",
-          "logo": "https://hockeynet.fr/storage/logos_structures/nsPtzdJhzCosiui4I9QN3UrxXkF3GKxdVKJxjo9u.png",
-          "points": 8,
-          "joues": 5,
-          "victoires": 2,
-          "victoiresProlong": 0,
-          "defaitesProlong": 2,
-          "defaites": 1,
-          "butsPour": 17,
-          "butsContre": 17,
-          "difference": 0
         },
         {
           "rang": 7,
