@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write # pour lancer la publication du site
 
 concurrency:
   group: classement
@@ -58,6 +58,8 @@ jobs:
           fi
           exit "$code"
       - name: Publier le classement s'il a changé
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git add data/
           if git diff --cached --quiet; then
@@ -68,3 +70,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Mise à jour du classement D2"
           git push
+          # Un push fait avec le jeton du workflow ne déclenche pas les autres
+          # workflows : on lance la publication du site explicitement
+          # (seulement depuis main, la seule branche autorisée à publier).
+          if [ "$GITHUB_REF_NAME" = main ]; then gh workflow run pages.yml --ref main; fi
