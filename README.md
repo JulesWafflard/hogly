@@ -17,7 +17,8 @@ hockeyfrance.com ──(GitHub Actions, toutes les 3 h)──> data/classement-d
   sans interface. Le JSON n'est réécrit que si le classement a changé.
 - `.github/workflows/classement.yml` lance ce script toutes les 3 heures, et
   toutes les 30 minutes les soirs de match du week-end, puis commite le JSON.
-- `.github/workflows/pages.yml` publie le widget et le JSON sur GitHub Pages.
+- `.github/workflows/pages.yml` publie le widget et le JSON sur GitHub Pages,
+  lancé par le workflow précédent uniquement quand le classement a changé.
 - `widget/classement.js` affiche le classement et met le Hogly en avant.
 
 ### Mise en route

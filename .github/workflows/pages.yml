@@ -7,9 +7,7 @@ on:
   push:
     branches: [main]
     paths: ["widget/**", "data/**"]
-  workflow_run:
-    workflows: ["Classement D2"]
-    types: [completed]
+  # Lancé aussi par « Classement D2 », uniquement quand le classement change.
   workflow_dispatch:
 
 permissions:
@@ -23,11 +21,10 @@ concurrency:
 
 jobs:
   deploy:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,5 +38,14 @@ jobs:
           sed -i 's#src="classement.js"#src="widget/classement.js"#' _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
+      # GitHub ne voit parfois pas tout de suite le paquet qui vient d'être
+      # déposé (« No artifacts named github-pages ») : on réessaie une fois.
       - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Attendre avant un nouvel essai
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 30
+      - id: retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
